@@ -1,5 +1,6 @@
 //Pendo Scripts
 
+<script>
 (function(apiKey){
     (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
     v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
@@ -11,8 +12,8 @@
         // Please use Strings, Numbers, or Bools for value types.
         pendo.initialize({
             visitor: {
-                id:    'VISITOR-UNIQUE-ID'
-                email: 'email@email.com'
+                id:           'VISITOR-UNIQUE-ID'
+                email:        'email@email.com'
                 full_name:    'my name'
                 // role:         // Optional
 
@@ -21,7 +22,7 @@
             },
 
             account: {
-                id:           'ACCOUNT-UNIQUE-ID' // Required if using Pendo Feedback
+                id:           'ACCOUNT-UNIQUE-ID'
                 // name:         // Optional
                 // is_paying:    // Recommended if using Pendo Feedback
                 // monthly_value:// Recommended if using Pendo Feedback
@@ -34,6 +35,7 @@
             }
         });
 })('b4b565c4-3dc8-4a1a-400d-721f16c3a693');
+</script>
 
 
 //EU Pendo Install
