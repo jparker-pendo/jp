@@ -1,41 +1,53 @@
 //Pendo Scripts
 
-<script>
 (function(apiKey){
-    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
-    v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+    v=['initialize','identify','updateOptions','pageLoad','trackEvents'];for(w=0,x=v.length;w<x;++w)(function(m){
         o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
         y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
         z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
-
         // Call this whenever information about your visitors becomes available
         // Please use Strings, Numbers, or Bools for value types.
+//pendo.isReady(console.log("is ready"))
         pendo.initialize({
+            disablecookies: true,
             visitor: {
-                id:           'VISITOR-UNIQUE-ID'
-                email:        'email@email.com'
-                full_name:    'my name'
+                id:  'VISITOR-UNIQUE-ID',
+                emailid: 'email@email.com',   // Required if user is logged in
+                TrialendDate: '2019-06-01 15:04:05',
+                wodifyDate:  '08/19/2015',
+                wodifyDatewtime:  '08/19/2015 03:04pm',
+                Staff_Class: "Temp",
+                Staff: "Admin",
+                language: 'de',
+                solarwindsdate:  "2017-03-08"
+                //enabledIntegrationVisitors: ['microsoft', 'enforce_modules','blackberry_modules'],
+                //role: ["Guardian"]
+                // email:        // Optional
                 // role:         // Optional
-
                 // You can add any additional visitor level key-values here,
                 // as long as it's not one of the above reserved names.
             },
-
             account: {
-                id:           'ACCOUNT-UNIQUE-ID'
+                id: 'ACCOUNT-UNIQUE-ID'
+                enabledIntegrationAccelerators: ['microsoft', 'enforce_modules','blackberry_modules'],
+                accountfield:  '100',
+                boolean_flag: false
                 // name:         // Optional
-                // is_paying:    // Recommended if using Pendo Feedback
-                // monthly_value:// Recommended if using Pendo Feedback
                 // planLevel:    // Optional
                 // planPrice:    // Optional
                 // creationDate: // Optional
-
                 // You can add any additional account level key-values here,
                 // as long as it's not one of the above reserved names.
-            }
+            },
+      	 //   parentAccount: {
+      	  //    id:  'Parent Account 4',
+      	  //     name:   "enabled integration test"      // Optional
+      	      // You can add any additional master account level
+      	      // key-values here.
+      	    //}
         });
-})('b4b565c4-3dc8-4a1a-400d-721f16c3a693');
-</script>
+      })('b4b565c4-3dc8-4a1a-400d-721f16c3a693');
 
 
 //EU Pendo Install
